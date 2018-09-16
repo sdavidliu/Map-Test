@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LVa-pz-mPc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cQF-TJ-CXp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -73,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExJ-Nl-CaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1768.8" y="31.934032983508249"/>
+            <point key="canvasLocation" x="1745" y="32"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kGZ-wZ-XCu">
@@ -93,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="177" y="32"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Google Map-->
         <scene sceneID="em5-LM-DMd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LVa-pz-mPc" sceneMemberID="viewController">
+                <navigationController title="Google Map" automaticallyAdjustsScrollViewInsets="NO" id="LVa-pz-mPc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="san-RH-41T">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -111,21 +110,99 @@
             </objects>
             <point key="canvasLocation" x="177" y="753"/>
         </scene>
-        <!--View Controller-->
+        <!--Google Map-->
         <scene sceneID="QBX-PA-Xnf">
             <objects>
-                <viewController id="7mU-Zd-nbE" sceneMemberID="viewController">
+                <viewController title="Google Map" id="7mU-Zd-nbE" customClass="GoogleMapViewController" customModule="MapTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VdV-Xf-LH0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Jsw-H9-3g7"/>
                     </view>
-                    <navigationItem key="navigationItem" id="C2v-UD-2Bt"/>
+                    <navigationItem key="navigationItem" title="Google Map" id="C2v-UD-2Bt">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="07o-gA-bqO">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PeG-Lb-Tuf">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Find"/>
+                                <connections>
+                                    <segue destination="naO-cb-kzM" kind="show" identifier="listSegue" id="WzO-rP-Bxm"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="saR-QS-bW0" kind="show" identifier="detailSegue" id="xkm-di-Zyc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBz-7U-zhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="972" y="752"/>
+        </scene>
+        <!--Google Maps Detail-->
+        <scene sceneID="UCG-Za-fmg">
+            <objects>
+                <viewController title="Google Maps Detail" id="saR-QS-bW0" customClass="GoogleMapDetailViewController" customModule="MapTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l1V-kE-kgJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAT-dh-fB6">
+                                <rect key="frame" x="87.5" y="165.5" width="200" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="pBc-Ji-8yx"/>
+                                    <constraint firstAttribute="width" constant="200" id="zRn-gj-Kg5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kAT-dh-fB6" firstAttribute="centerY" secondItem="PI5-Wi-DD5" secondAttribute="centerY" id="894-QS-RmI"/>
+                            <constraint firstItem="kAT-dh-fB6" firstAttribute="centerX" secondItem="PI5-Wi-DD5" secondAttribute="centerX" id="csY-sg-IoC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PI5-Wi-DD5"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="kAT-dh-fB6" id="bTG-Xh-tIs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lla-6C-AlJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1745" y="752"/>
+        </scene>
+        <!--List-->
+        <scene sceneID="LhI-LQ-agN">
+            <objects>
+                <viewController title="List" id="naO-cb-kzM" customClass="GoogleMapListViewController" customModule="MapTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hAg-66-YCG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QL6-Vh-Zm8">
+                                <rect key="frame" x="-0.5" y="32" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QL6-Vh-Zm8" firstAttribute="centerY" secondItem="34t-s4-GiS" secondAttribute="centerY" id="3Af-he-pBn"/>
+                            <constraint firstItem="QL6-Vh-Zm8" firstAttribute="height" secondItem="hAg-66-YCG" secondAttribute="height" id="fvm-XW-wQf"/>
+                            <constraint firstItem="QL6-Vh-Zm8" firstAttribute="centerX" secondItem="34t-s4-GiS" secondAttribute="centerX" id="hf3-P4-OSP"/>
+                            <constraint firstItem="QL6-Vh-Zm8" firstAttribute="width" secondItem="hAg-66-YCG" secondAttribute="width" id="jzw-Vc-wPL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="34t-s4-GiS"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="QL6-Vh-Zm8" id="ZSJ-pH-sgl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TKG-jP-zhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2479" y="752"/>
         </scene>
     </scenes>
 </document>
