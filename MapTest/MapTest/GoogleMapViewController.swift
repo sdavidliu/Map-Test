@@ -62,7 +62,7 @@ class GoogleMapViewController: UIViewController {
         bottomView.layer.shadowOpacity = 0.7
         bottomView.layer.shouldRasterize = true
         bottomView.isHidden = true
-        self.view.addSubview(bottomView)
+        //self.view.addSubview(bottomView)
         
     }
     
@@ -115,7 +115,7 @@ class GoogleMapViewController: UIViewController {
         let origin = "\(source.latitude),\(source.longitude)"
         let destination = "\(destination.latitude),\(destination.longitude)"
         
-        let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&sensor=true&mode=walking"
+        let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&sensor=true&mode=walking&key=AIzaSyDFMdC53Ly7LUaQFSrMqXVVOUgKW6XuPyE"
         print(url)
         
         Alamofire.request(url).responseJSON { response in
